@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>pro-restful</title>
+	<style>
+		button{
+			display: block;
+			width: 200px;
+			height: 50px;
+			border: 1px solid #ccc;
+			margin: 50px auto;
+			text-align:center;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+
+<button onclick="test()">发送测试接口请求</button>
+
+<script src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="pro-restful.js"></script>
+<script>
+
+	var $http = new Prorestful({
+		baseUrl: './'
+	})
+
+	function test(){
+		var testAPI = $http.GET("test.json")
+
+		testAPI.success(function(data){
+			console.log('返回status为1,接口请求成功',data)
+		}).error(function(){
+			console.log('返回status为0,接口请求失败',data)
+		})
+	}
+	
+</script>
+
+</body>
+</html>
