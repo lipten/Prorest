@@ -81,7 +81,7 @@
       this.baseUrl = opt.baseUrl
     }
     // 取缓存数据
-      http.prototype.getData = function(url,initData){
+      Prorest.prototype.getData = function(url,initData){
         if(localStorage.getItem(url)){
           return JSON.parse(localStorage.getItem(url)).data
         }else{
@@ -91,7 +91,7 @@
 
       // 获取数据
       // 可以将数据存到本地
-      http.prototype.GET = function(){
+      Prorest.prototype.GET = function(){
         var self = this;
         var url = arguments[0],
             opt = {},
@@ -141,7 +141,7 @@
       };
 
       // 增加数据 必须加参数
-      http.prototype.POST = function(url,opt,func){
+      Prorest.prototype.POST = function(url,opt,func){
         var self = this;
         return new Promise(function(resolve){
           $.ajax({
@@ -156,7 +156,7 @@
       };
 
       // 更新数据 必须加参数
-      http.prototype.PUT = function(url,opt,func){
+      Prorest.prototype.PUT = function(url,opt,func){
         var self = this;
         return new Promise(function(resolve){
           $.ajax({
@@ -172,7 +172,7 @@
       };
 
       // 删除数据 必须带id
-      http.prototype.DELETE = function(url,opt,func){
+      Prorest.prototype.DELETE = function(url,opt,func){
         var self = this;
         return new Promise(function(resolve){
           $.ajax({
