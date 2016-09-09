@@ -6,7 +6,7 @@
 ####感受一下promise与restful的碰撞吧
 
 ```
-var $http = new Prorestful({
+var $http = new Prorest({
         baseUrl: './'
     })
 

@@ -7,7 +7,7 @@
         module.exports = factory(require('zepto'));
     } else {
         // 浏览器全局变量(root 即 window)
-        root.Prorestful= factory(root.Zepto);
+        root.Prorest= factory(root.Zepto);
     }
 }(this, function ($) {
     // 针对后端接口统一返回以下格式来做判断操作
@@ -73,7 +73,7 @@
     }
 
     //    方法
-    var http = function(opt){
+    var Prorest = function(opt){
       var defaultOpt = {
         baseUrl:location.protocol+'//'+location.hostname
       }
@@ -188,6 +188,6 @@
       };
 
     //    暴露公共方法
-    return http;
+    return Prorest;
 }));
 
